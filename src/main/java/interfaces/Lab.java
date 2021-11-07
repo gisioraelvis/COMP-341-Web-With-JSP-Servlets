@@ -9,6 +9,18 @@ package interfaces;
  * @author brian
  */
 public class Lab {
-    String test;
-    String results;
+   public String test;
+   public String results;
+   public String diagnosisID;
+   
+   public Lab(String test,String results,String diagnosisID){
+       this.diagnosisID = diagnosisID;
+       this.test = test;
+       this.results = results;
+   }
+   
+   Lab(String test,String diagnosisID){
+       this.diagnosisID = diagnosisID;
+       this.test = test;
+   }
 }

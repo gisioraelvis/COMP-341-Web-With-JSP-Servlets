@@ -4,12 +4,15 @@
  */
 package interfaces;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author brian
  */
-public class StudentQueue {
-    public String RegNo;
-    public String Intent;
-    public String Date;
+
+public interface  IUserRepository{
+    User addNewUser(User user);
+    User retriveUser (String regNo);
+    ArrayList<User> retriveUsers();
 }
