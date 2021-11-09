@@ -4,6 +4,9 @@
  */
 package interfaces;
 
+import entities.Diagnosis;
+import entities.Lab;
+
 import java.util.ArrayList;
 
 /**

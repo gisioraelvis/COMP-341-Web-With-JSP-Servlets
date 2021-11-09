@@ -5,17 +5,12 @@
 package usecase;
 
 import Respositories.DiagnosisRepository;
-import Respositories.StudentSessionRepository;
-import interfaces.Lab;
-import interfaces.StudentSession;
-import java.time.Instant;
+import entities.Lab;
+import entities.StudentSession;
 import java.util.ArrayList;
-import java.time.LocalDateTime;
+import java.util.Date;
 
-/**
- *
- * @author brian
- */
+
 public class EnterLabResults {
     private DiagnosisRepository repo ;
     private BookSession bookSession;
@@ -27,7 +22,7 @@ public class EnterLabResults {
     public ArrayList<Lab> saveResults(ArrayList<Lab> results,String regNo){
         ArrayList<Lab> labResults = this.repo.addLabResults(results);
         //re-schedule the student again with the doctor
-        String time = LocalDateTime.now().toString();
+        String time = "LocalDate.now().toString()";
         StudentSession student = new StudentSession(regNo,"Lab Results",time);
         this.bookSession.addSession(student);
         return labResults;

@@ -5,7 +5,7 @@
 package Respositories;
 
 import interfaces.IStudentSessionRepository;
-import interfaces.StudentSession;
+import entities.StudentSession;
 
 /**
  *

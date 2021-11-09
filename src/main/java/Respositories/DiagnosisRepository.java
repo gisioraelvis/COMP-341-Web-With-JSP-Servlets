@@ -4,9 +4,9 @@
  */
 package Respositories;
 
-import interfaces.Diagnosis;
+import entities.Diagnosis;
 import interfaces.IDiagnosisRepository;
-import interfaces.Lab;
+import entities.Lab;
 import java.util.ArrayList;
 
 /**

@@ -4,21 +4,18 @@
  */
 package usecase;
 
-import Respositories.UserRepository;
-import interfaces.User;
+import entities.Student;
 
-/**
- *
- * @author brian
- */
+import interfaces.IStudentIO;
+
 public class RegisterNewStudent {
-    private UserRepository repo;
-    public RegisterNewStudent(UserRepository repo){
+    private IStudentIO repo;
+    public RegisterNewStudent(IStudentIO repo){
         this.repo = repo;
     }
     
-    public User register(User newUser){
-        User savedUser = this.repo.addNewUser(newUser);
-        return savedUser;
+    public void register(Student student){
+         this.repo.add(student);
+
     }
 }

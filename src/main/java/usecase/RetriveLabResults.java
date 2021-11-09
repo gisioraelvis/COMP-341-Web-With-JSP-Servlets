@@ -5,7 +5,7 @@
 package usecase;
 
 import Respositories.DiagnosisRepository;
-import interfaces.Lab;
+import entities.Lab;
 import java.util.ArrayList;
 
 /**

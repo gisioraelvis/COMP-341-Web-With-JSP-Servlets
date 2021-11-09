@@ -5,13 +5,9 @@ package Respositories;
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 
-/**
- *
- * @author brian
- */
 
 import interfaces.IUserRepository;
-import interfaces.User;
+import entities.User;
 import java.util.ArrayList;
 
 public class UserRepository implements IUserRepository { 

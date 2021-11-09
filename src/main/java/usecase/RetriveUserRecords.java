@@ -4,6 +4,9 @@
  */
 package usecase;
 
+import entities.Diagnosis;
+import entities.User;
+import entities.UserRecords;
 import interfaces.*;
 import java.util.ArrayList;
 

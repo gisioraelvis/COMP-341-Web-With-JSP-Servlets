@@ -4,6 +4,8 @@
  */
 package interfaces;
 
+import entities.StudentSession;
+
 /**
  *
  * @author brian

@@ -5,7 +5,7 @@
 package usecase;
 
 import Respositories.StudentSessionRepository;
-import interfaces.StudentSession;
+import entities.StudentSession;
 
 /**
  *

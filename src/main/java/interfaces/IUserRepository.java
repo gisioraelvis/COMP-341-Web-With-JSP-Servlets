@@ -4,6 +4,8 @@
  */
 package interfaces;
 
+import entities.User;
+
 import java.util.ArrayList;
 
 /**

@@ -5,7 +5,7 @@
 package usecase;
 
 import Respositories.DiagnosisRepository;
-import interfaces.Diagnosis;
+import entities.Diagnosis;
 
 /**
  *
