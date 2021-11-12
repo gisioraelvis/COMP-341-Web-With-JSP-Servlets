@@ -14,9 +14,15 @@ import java.util.ArrayList;
  * @author brian
  */
 public interface IDiagnosisRepository {
-    Diagnosis addDiagnosis(Diagnosis diagnosis);
-    ArrayList<Diagnosis> returnPatientHistory(String regNO);
+    void addDiagnosis(Diagnosis diagnosis);
+
+    ArrayList<Diagnosis> patientHistory(String regNO);
+
     Diagnosis currentDiagnosis(String regNO);
+
     ArrayList<Lab> retrivelabTests(String regNO);
-    ArrayList<Lab> addLabResults(ArrayList<Lab> labresults); 
+
+  void addLabResults(ArrayList<Lab> labs,String diagnosisID);
+
+    ArrayList<Diagnosis> retriveDiagnosis();
 }

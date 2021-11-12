@@ -16,7 +16,6 @@ public class IO {
     };
     public static void saveToFile(String json,String path) throws IOException{
         FileWriter writer = new FileWriter(path, false);
-        writer.flush();
         writer.write(json);
         writer.close();
     }

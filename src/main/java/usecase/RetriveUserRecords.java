@@ -27,7 +27,7 @@ public class RetriveUserRecords {
        //retrive user details
         User userDetails = this.repo.retriveUser(regNo);
         //retrive medical history
-        ArrayList<Diagnosis> diagnosis = this.diagRepo.returnPatientHistory(regNo);
+        ArrayList<Diagnosis> diagnosis = this.diagRepo.patientHistory(regNo);
         //return both user details and med history
         UserRecords result = new UserRecords(userDetails,diagnosis);
         return result;
