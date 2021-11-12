@@ -78,12 +78,9 @@ public class DiagnosisRepository implements IDiagnosisRepository {
         ArrayList<Diagnosis> diagnosisList = this.retriveDiagnosis();
         for (Diagnosis d : diagnosisList) {
             if (d.id.equals(diagnosisID)) {
-                // d.lab = lab;
+                d.lab = lab;
                 try {
                     String json = this.gson.toJson(new DiagnosisList(diagnosisList));
-                    System.out.println(this.gson.toJson(d));
-                    System.out.println(this.gson.toJson(lab));
-
                     IO.saveToFile(json, this.PATH);
                 } catch (IOException e) {
                     e.printStackTrace();

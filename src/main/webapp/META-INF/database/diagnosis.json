@@ -1,1 +1,34 @@
-{"diagnosis":[{"user":{"id":"1000","surname":"surname","firstName":"firstName","lastName":"lastName","phone":"phone","email":"email","gender":"gender","maritalStatus":"maritalStatus","nationality":"nationality","religion":"religion","nextOfKin":{"name":"Oj","address":"Nakuru","phone":"0791328653"}},"consultation":"Hiv/Aids","lab":[{"test":"TB","diagnosisID":"112"}],"notes":"notes","prescription":"prescription","id":"12345"},{"user":{"id":"1000","surname":"surname","firstName":"firstName","lastName":"lastName","phone":"phone","email":"email","gender":"gender","maritalStatus":"maritalStatus","nationality":"nationality","religion":"religion","nextOfKin":{"name":"Oj","address":"Nakuru","phone":"0791328653"}},"consultation":"Hiv/Aids","lab":[{"test":"TB","diagnosisID":"112"}],"notes":"notes","prescription":"prescription","id":"12345"}]}
+{
+    "diagnosis": [
+        {
+            "user": {
+                "id": "1000",
+                "surname": "surname",
+                "firstName": "firstName",
+                "lastName": "lastName",
+                "phone": "phone",
+                "email": "email",
+                "gender": "gender",
+                "maritalStatus": "maritalStatus",
+                "nationality": "nationality",
+                "religion": "religion",
+                "nextOfKin": {
+                    "name": "Oj",
+                    "address": "Nakuru",
+                    "phone": "0791328653"
+                }
+            },
+            "consultation": "Hiv/Aids",
+            "lab": [
+                {
+                    "test": "TB",
+                    "results": "POSITIVE",
+                    "diagnosisID": "112"
+                }
+            ],
+            "notes": "notes",
+            "prescription": "prescription",
+            "id": "12345"
+        }
+    ]
+}
