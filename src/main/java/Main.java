@@ -16,16 +16,16 @@ public class Main {
                 // Familydoctor object
                 FamilyDoctor familyDoctor = new FamilyDoctor("elvo", "Nakuru", "0791328653");
                 // Student object
-                Student student = new Student("1000", "surname", "firstName", "lastName", "phone", "email", "gender",
+                Student student = new Student("1000","regNo", "surname", "firstName", "lastName", "phone", "email", "gender",
                                 "maritalStatus", "nationality", "religion", nextOfKin, "privateHospital", "admission",
                                 "reasonAdmission", "previousIllness", "medicalHistory", "vision", "hearing", "hearing",
                                 "hbLevel", "A+", "urineChemistry", "Yes", "AOB", "Yes", familyDoctor);
-                Student student2 = new Student("StudentID", "surname", "firstName", "lastName", "phone", "email",
+                Student student2 = new Student("StudentID","regNo", "surname", "firstName", "lastName", "phone", "email",
                                 "gender", "maritalStatus", "nationality", "religion", nextOfKin, "privateHospital",
                                 "admission", "reasonAdmission", "previousIllness", "medicalHistory", "vision",
                                 "hearing", "hearing", "hbLevel", "A+", "urineChemistry", "Yes", "AOB", "Yes",
                                 familyDoctor);
-                Student student3 = new Student("StudentID", "surname", "firstName", "lastName", "phone", "email",
+                Student student3 = new Student("StudentID","regNo", "surname", "firstName", "lastName", "phone", "email",
                                 "gender", "maritalStatus", "nationality", "religion", nextOfKin, "privateHospital",
                                 "admission", "reasonAdmission", "previousIllness", "medicalHistory", "vision",
                                 "hearing", "hearing", "hbLevel", "A+", "urineChemistry", "Yes", "AOB", "Yes",

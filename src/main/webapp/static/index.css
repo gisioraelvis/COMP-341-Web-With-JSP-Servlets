@@ -1,0 +1,226 @@
+:root {
+  --black: #000000;
+  --white: #ffffff;
+  --dark: #620093;
+  --light: #934ab3;
+  --primary: #a0522d;
+  --gradient: #c3704a4b;
+  --font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  border: 0;
+}
+body {
+  font-family: Futura, -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto",
+    "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  min-height: 100vh;
+}
+
+/* side */
+.side {
+    top: 0;
+    left: 0;
+  background-color: #fbfbfb;
+  color: #000;
+  width: 17.14286rem;
+  height: 100vh;
+  box-shadow: 0 18px 24px rgba(0,0,0,.12);
+}
+.ml-17{
+    margin-left: 17.14286rem;
+}
+.menu-item .group-title {
+    color: currentColor;
+    display: block;
+    opacity: .3;
+    padding: 2.14286rem .35714rem .71429rem;
+        padding-top: 2.14286rem;
+    text-transform: uppercase;
+}
+.menu-ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 2.14286rem 1.42857rem 0;
+}
+
+.menu-item {
+  font-weight: 700;
+  padding: 0 1.07143rem;
+  position: relative;
+}
+.menu-ul .menu-item .item-link {
+  align-items: center;
+  background: transparent;
+  color: currentColor;
+  display: flex;
+  height: 100%;
+  justify-content: space-between;
+  min-height: 2.14286rem;
+  padding: 0.35714rem 0;
+  position: relative;
+  text-decoration: none;
+  transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+}
+.menu-item .item-link:hover {
+  background: transparent;
+  color: #336cfb;
+}
+
+.link-icon {
+  font-size: 1.3em;
+  margin: 0 0.35714rem;
+  opacity: 0.25;
+}
+
+.link-text {
+    flex-grow: 2;
+    flex-shrink: 1;
+    margin: 0 .35714rem;
+}
+.card{
+    box-shadow: 0 18px 24px rgba(0,0,0,.12);
+    background-size: cover;
+border: 0;
+border-radius: 6px;
+display: block;
+margin-bottom: 2.85714rem;
+position: relative;
+}
+/*font-size*/
+.fs-14{
+    font-size: 14px;
+}
+.fs-16 {
+    font-size: 16px;
+}
+
+.fs-20 {
+    font-size: 20px;
+}
+.fs-24 {
+    font-size: 24px;
+}
+.fs-48 {
+    font-size: 48px;
+}
+/*opacity*/
+opacity-50{
+    opacity: 50%;
+}
+
+
+
+.btn.btn-square.btn-sm {
+    min-width: 2.5rem;
+}
+.btn.btn-square, .btn.btn-square.btn-sm {
+    padding-left: .35714rem;
+    padding-right: .35714rem;
+}
+.btn-error {
+    background: #ed5564;
+    border-color: #ed5564;
+    color: #fff;
+}
+.btn.btn-sm {
+    font-size: .8rem;
+    line-height: .89;
+    padding: calc(.7rem - .5px) .7rem;
+        padding-right: 0.71429rem;
+        padding-left: 0.71429rem;
+}
+.btn.btn-square {
+    min-width: 2.85714rem;
+}
+
+.add-action-box {
+    bottom: 1.7rem;
+    position: fixed;
+    right: 1.4rem;
+    z-index: 9997;
+}
+.add-action-box .btn{
+        box-shadow: 0 18px 24px rgba(0,0,0,.25);
+
+} 
+
+.modal {
+ z-index:9999;
+
+}
+.modal-dialog{
+ max-width: 800px !important;
+    
+}
+.modal-content {
+ background:#fff;
+ border:0;
+ border-radius:6px;
+ box-shadow:0 18px 24px rgba(0,0,0,.12)
+}
+.modal-content .btn-close {
+ position:absolute;
+ right:3px;
+ top:3px
+}
+.modal-content .modal-header {
+ align-items:center;
+ border:0;
+ border-top-left-radius:inherit;
+ border-top-right-radius:inherit;
+ display:flex;
+ margin:0;
+ padding:1.42857rem 1.07143rem
+}
+.modal-content .modal-header>* {
+ margin:0 .35714rem
+}
+.modal-content .modal-header .modal-title {
+ font-size:2rem;
+ font-weight:500;
+ line-height:1
+}
+.modal-content .modal-body {
+ padding:1.42857rem
+}
+.modal-content .modal-footer {
+
+ border:0;
+ border-bottom-left-radius:inherit;
+ border-bottom-right-radius:inherit;
+ padding:1.42857rem
+}
+.modal-content .modal-footer .actions {
+ display:flex;
+ flex-wrap:wrap;
+ margin:-.35714rem
+}
+.modal-content .modal-footer .actions>* {
+ margin:.35714rem
+}
+.show-modal{
+    opacity: 1 !important;
+    display: block !important;}
+/*form*/
+.form-control :-moz-placeholder,
+.form-control ::-moz-placeholder {
+ color:#a8a8a8
+}
+.form-control :-ms-input-placeholder {
+ color:#a8a8a8
+}
+
+.form-control:focus,
+.form-control:hover {
+
+ color:#1f2022
+}
+.form-control:focus {
+ background:#fff;
+ border-color:#336cfb
+}

@@ -15,7 +15,7 @@ public class Student  extends User{
 
 
     //    Constructors
-    public Student(String id, String surname, String firstName, String lastName, String phone, String email, String gender,
+    public Student(String id ,String regNo ,String surname, String firstName, String lastName, String phone, String email, String gender,
                    String maritalStatus, String nationality, String religion, NextOfKin nextOfKin, String privateHospital,
                    String admission, String reasonAdmission, String previousIllness, String medicalHistory, String vision,
                    String hearing, String bloodSugar, String hbLevel, String bloodGroup, String urineChemistry, String onTreatment,
@@ -37,6 +37,7 @@ public class Student  extends User{
         this.studentFit = studentFit;
         this.privateHospital=privateHospital;
         this.familyDoctor = familyDoctor;
+        this.regNo = regNo;
     }
 
 

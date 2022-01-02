@@ -4,6 +4,7 @@ import entities.Diagnosis;
 import entities.DiagnosisList;
 import interfaces.IDiagnosisRepository;
 import entities.Lab;
+import utils.Utils;
 import utils.IO;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -11,7 +12,7 @@ import java.util.ArrayList;
 import com.google.gson.Gson;
 
 public class DiagnosisRepository implements IDiagnosisRepository {
-    private String PATH = "/home/ojay/dev/java/COMP-341-Web-With-JSP-Servlets/src/main/webapp/META-INF/database/diagnosis.json";
+    private String PATH = Utils.databasePath + "diagnosis.json";
     private Gson gson = new Gson();
 
     public void addDiagnosis(Diagnosis diagnosis) {
