@@ -5,7 +5,7 @@
 package usecase;
 
 import Respositories.StudentSessionRepository;
-import entities.StudentSession;
+import entities.Appointment;
 
 /**
  *
@@ -17,11 +17,11 @@ public class BookSession {
         this.repo = repo;
     }
     
-    void addSession(StudentSession student){
+    void addSession(Appointment student){
         this.repo.addStudentSession(student);
     }
     
-    StudentSession next(){
+    Appointment next(){
        return this.repo.nextSession();
     }
 }

@@ -4,7 +4,7 @@ package servlets;
  *
  * @author ojay
  */
-import Respositories.StudentIO;
+import Respositories.StudentRepository;
 import entities.FamilyDoctor;
 import entities.NextOfKin;
 import entities.Student;
@@ -15,7 +15,7 @@ import java.util.ArrayList;
 import utils.Utils;
 
 public class StudentServlet extends HttpServlet {
-        private StudentIO studentIo = new StudentIO();
+        private StudentRepository studentIo = new StudentRepository();
 
         @Override
         public void doGet(HttpServletRequest request,
@@ -49,7 +49,7 @@ public class StudentServlet extends HttpServlet {
 
                 Student student = new Student(
                                 Utils.iDGenerator(),
-                        request.getParameter("regNo"),
+                                request.getParameter("regNo"),
                                 request.getParameter("surname"),
                                 request.getParameter("firstName"),
                                 request.getParameter("lastName"),

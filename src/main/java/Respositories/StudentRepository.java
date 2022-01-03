@@ -10,7 +10,7 @@ import utils.IO;
 import java.io.IOException;
 import java.util.ArrayList;
 
-public class StudentIO implements IStudentIO {
+public class StudentRepository implements IStudentIO {
     private String PATH = Utils.databasePath + "student.json";
     private Gson gson = new Gson();
 
@@ -36,20 +36,37 @@ public class StudentIO implements IStudentIO {
     }
 
     public ArrayList<Student> retrieveStudents() {
+        StudentList list ;
         try {
             String studentListStr = IO.readFile(this.PATH);
-            StudentList list = this.gson.fromJson(studentListStr, StudentList.class);
+            if(studentListStr.isEmpty()){
+               list = new StudentList();
+            }
+            else{
+                 list = this.gson.fromJson(studentListStr, StudentList.class);
+            }
             return list.students;
         } catch (IOException e) {
             e.printStackTrace();
+            return new ArrayList<Student>();
         }
-        return null;
     }
 
     public Student retrieveStudent(String regNo) {
         ArrayList<Student> students = this.retrieveStudents();
         for (Student student : students) {
-            if (student.getRegNo() == regNo) {
+            if (student.getRegNo().equals(regNo)) {
+                return student;
+            }
+        }
+        return null;
+    }
+    public Student getStudentById(String id) {
+        ArrayList<Student> students = this.retrieveStudents();
+       
+        for (Student student : students) {
+             System.err.println(id+"----" + student.getId());
+            if (student.getId().equals(id)) {
                 return student;
             }
         }

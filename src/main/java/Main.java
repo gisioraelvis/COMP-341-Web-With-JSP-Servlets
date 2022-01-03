@@ -2,6 +2,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 
 import Respositories.DiagnosisRepository;
+import Respositories.DoctorRepository;
 import entities.Diagnosis;
 import entities.FamilyDoctor;
 import entities.Lab;
@@ -32,17 +33,19 @@ public class Main {
                                 familyDoctor);
 
                 // Student IO
-                DiagnosisRepository diagnosisIo = new DiagnosisRepository();
-                Lab lab = new Lab("TB", "112");
-                ArrayList<Lab> labs = new ArrayList<Lab>();
-                labs.add(lab);
-                Diagnosis diagnosis1 = new Diagnosis(student, "Hiv/Aids", labs, "notes", "prescription", "12345");
-                // RegisterNewStudent registerNewStudent=new RegisterNewStudent(studentio);
-                diagnosisIo.addDiagnosis(diagnosis1);
-                Lab lab2 = new Lab("TB","POSITIVE" ,"112");
-                ArrayList<Lab> labs2 = new ArrayList<Lab>();
-                labs2.add(lab2);
-                diagnosisIo.addLabResults(labs2, "12345");
+                // DiagnosisRepository diagnosisIo = new DiagnosisRepository();
+                // Lab lab = new Lab("TB", "112");
+                // ArrayList<Lab> labs = new ArrayList<Lab>();
+                // labs.add(lab);
+                // Diagnosis diagnosis1 = new Diagnosis(student, "Hiv/Aids", labs, "notes", "prescription", "12345");
+                // // RegisterNewStudent registerNewStudent=new RegisterNewStudent(studentio);
+                // diagnosisIo.addDiagnosis(diagnosis1);
+                // Lab lab2 = new Lab("TB","POSITIVE" ,"112");
+                // ArrayList<Lab> labs2 = new ArrayList<Lab>();
+                // labs2.add(lab2);
+                // diagnosisIo.addLabResults(labs2, "12345");
+                DoctorRepository dio = new DoctorRepository();
+                dio.retrieveDoctors();
                
 
         }

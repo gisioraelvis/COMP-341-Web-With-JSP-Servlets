@@ -4,13 +4,13 @@
  */
 package interfaces;
 
-import entities.StudentSession;
+import entities.Appointment;
 
 /**
  *
  * @author brian
  */
 public interface IStudentSessionRepository {
-    void addStudentSession(StudentSession session);
-    StudentSession nextSession();
+    void addStudentSession(Appointment session);
+    Appointment nextSession();
 }

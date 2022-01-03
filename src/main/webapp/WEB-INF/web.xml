@@ -12,7 +12,14 @@
     <servlet-name>students</servlet-name>
     <servlet-class>servlets.StudentServlet</servlet-class>
   </servlet>
-  
+  <servlet>
+    <servlet-name>doctors</servlet-name>
+    <servlet-class>servlets.DoctorServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>appointments</servlet-name>
+    <servlet-class>servlets.AppointmentServlet</servlet-class>
+  </servlet>
   
   
   <servlet-mapping>
@@ -22,6 +29,14 @@
     <servlet-mapping>
     <url-pattern>/students</url-pattern>
     <servlet-name>students</servlet-name>
+  </servlet-mapping>
+  <servlet-mapping>
+    <url-pattern>/doctors</url-pattern>
+    <servlet-name>doctors</servlet-name>
+  </servlet-mapping>
+  <servlet-mapping>
+    <url-pattern>/appointments</url-pattern>
+    <servlet-name>appointments</servlet-name>
   </servlet-mapping>
   <servlet-mapping>
     <url-pattern>/</url-pattern>

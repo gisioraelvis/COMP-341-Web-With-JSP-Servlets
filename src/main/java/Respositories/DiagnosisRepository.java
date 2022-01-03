@@ -29,19 +29,28 @@ public class DiagnosisRepository implements IDiagnosisRepository {
             String json = this.gson.toJson(list);
             IO.saveToFile(json, this.PATH);
         } catch (IOException e) {
-            e.printStackTrace();
+            
         } // Tools | Templates.
     }
 
-    public ArrayList<Diagnosis> retriveDiagnosis() {
+      public ArrayList<Diagnosis> retriveDiagnosis() {
+        DiagnosisList list;
         try {
-            String diagnosisListStr = IO.readFile(this.PATH);
-            DiagnosisList list = this.gson.fromJson(diagnosisListStr, DiagnosisList.class);
+            
+            String str = utils.IO.readFile(this.PATH);
+            if(str.isEmpty()){
+                list = new DiagnosisList();
+            }
+            else{
+            list = this.gson.fromJson(str, DiagnosisList.class);
+
+            }
             return list.diagnosis;
         } catch (IOException e) {
-            e.printStackTrace();
         }
         return new ArrayList<Diagnosis>();
+
+        
     }
 
     @Override
