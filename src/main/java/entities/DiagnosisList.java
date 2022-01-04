@@ -3,6 +3,7 @@ package entities;
 import java.util.ArrayList;
 
 public class DiagnosisList {
+
     public ArrayList<Diagnosis> diagnosis;
 
     public DiagnosisList() {

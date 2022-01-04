@@ -18,7 +18,7 @@
         <link rel="stylesheet" href="static/icofont/icofont.min.css" />
         <link rel="stylesheet" href="static/index.css" />
         <link rel="stylesheet" href="static/students.css" />
-
+        <meta name="viewport" content="width=device-width, initial-scale=1, max-scale=1, height=device-height"/>
     </head>
 
     <body>
@@ -32,8 +32,8 @@
         </div>
         <div class="ml-17 ">
 
-            <div class=" container mx-auto mx-3 mt-5">
-                <h3 class="mb-4  text-center">
+            <div class=" container mx-auto mx-3 pt-5">
+                <h3 class="mb-4 ">
                     Doctors
                 </h3>
                 <div class="card table-responsive">
@@ -67,22 +67,20 @@
                                 </td>
                                 <td>
                                     <strong>
-                                        <%=doctor.phoneNumber%>
+                                        <%=doctor.getPhone()%>
                                     </strong>
                                 </td>
                                 <td>
                                     <div class="d-flex align-items-center nowrap text-primary">
                                         <span class="icofont-ui-email p-0 me-2"></span>
-                                        <%=doctor.email%>
+                                        <%=doctor.getEmail()%>
                                     </div>
 
                                 </td>
                                 <td>
                                     <div class="actions">
-                                        <button class="btn btn-info btn-sm rounded-pill">
-                                            <span class="btn-icon icofont-ui-edit"></span>
-                                        </button>
-                                        <button class="btn btn-error btn-sm rounded-pill">
+
+                                        <button class="btn btn-error btn-sm rounded-circle">
                                             <span class="btn-icon icofont-ui-delete"></span>
                                         </button>
                                     </div>
@@ -96,7 +94,7 @@
         </div>
 
         <div onclick="toggleModal()" class="add-action-box">
-            <button class="btn btn-primary btn-lg btn-square rounded-pill" data-bs-toggle="modal"
+            <button class="btn btn-primary btn-lg btn-square rounded-circle" data-bs-toggle="modal"
                     data-bs-target="#add-appointment">
                 <span class="btn-icon icofont-doctor fs-48"></></span>
             </button>
@@ -122,6 +120,21 @@
                                     <input name="email" required="true" class="form-control my-2" type="email"
                                            placeholder="email">
                                 </div>
+                                <div class="form-group col-12 col-sm-6">
+
+
+                                    <select name="gender" required="true" class="form-control my-2">
+                                        <option>
+                                            select gender
+                                        </option>
+                                        <option value="male">
+                                            Male
+                                        </option>
+                                        <option value="female">
+                                            Female
+                                        </option>
+                                    </select>
+                                </div>
                             </div>
 
 
@@ -135,14 +148,15 @@
                 </div>
             </div>
 
-        </div>
-        <script>
-            const toggleModal = () => {
-                document.getElementById("modal").classList.toggle("show-modal");
+        </div> </div>
+        <%@include file="footer.jsp" %>
+    <script>
+        const toggleModal = () => {
+            document.getElementById("modal").classList.toggle("show-modal");
 
-            };
-        </script>
-    </body>
+        };
+    </script>
+</body>
 
 </html>
 

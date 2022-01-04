@@ -11,5 +11,6 @@ import java.util.ArrayList;
  * @author ojay
  */
 public class AppointmentList {
-public ArrayList<Appointment> appointments = new ArrayList<Appointment>();    
+
+    public ArrayList<Appointment> appointments = new ArrayList<Appointment>();
 }

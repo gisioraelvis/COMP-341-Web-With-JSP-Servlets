@@ -1,54 +1,92 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <web-app>
-  <!-- xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd" id="WebApp_ID" version="4.0" -->
-  <display-name>MedicalProfiler</display-name>
+    <!-- xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd" id="WebApp_ID" version="4.0" -->
+    <display-name>MedicalProfiler</display-name>
   
   
-  <servlet>
-    <servlet-name>Home</servlet-name>
-    <servlet-class>servlets.HomeServlet</servlet-class>
-  </servlet>
-  <servlet>
-    <servlet-name>students</servlet-name>
-    <servlet-class>servlets.StudentServlet</servlet-class>
-  </servlet>
-  <servlet>
-    <servlet-name>doctors</servlet-name>
-    <servlet-class>servlets.DoctorServlet</servlet-class>
-  </servlet>
-  <servlet>
-    <servlet-name>appointments</servlet-name>
-    <servlet-class>servlets.AppointmentServlet</servlet-class>
-  </servlet>
+    <servlet>
+        <servlet-name>Home</servlet-name>
+        <servlet-class>servlets.HomeServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>students</servlet-name>
+        <servlet-class>servlets.StudentServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>doctors</servlet-name>
+        <servlet-class>servlets.DoctorServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>appointments</servlet-name>
+        <servlet-class>servlets.AppointmentServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>diagnosis</servlet-name>
+        <servlet-class>servlets.DiagnosisServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>diagnosisDetail</servlet-name>
+        <servlet-class>servlets.DiagnosisDetailServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>lab</servlet-name>
+        <servlet-class>servlets.LabServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>labUpdate</servlet-name>
+        <servlet-class>servlets.UpdateLabServlet</servlet-class>
+    </servlet>
   
   
-  <servlet-mapping>
-    <url-pattern>/static/*</url-pattern>
-    <servlet-name>default</servlet-name>
-  </servlet-mapping>
+  
+  
+  
     <servlet-mapping>
-    <url-pattern>/students</url-pattern>
-    <servlet-name>students</servlet-name>
-  </servlet-mapping>
-  <servlet-mapping>
-    <url-pattern>/doctors</url-pattern>
-    <servlet-name>doctors</servlet-name>
-  </servlet-mapping>
-  <servlet-mapping>
-    <url-pattern>/appointments</url-pattern>
-    <servlet-name>appointments</servlet-name>
-  </servlet-mapping>
-  <servlet-mapping>
-    <url-pattern>/</url-pattern>
-    <servlet-name>Home</servlet-name>
-  </servlet-mapping>
+        <url-pattern>/static/*</url-pattern>
+        <servlet-name>default</servlet-name>
+    </servlet-mapping>
+    <servlet-mapping>
+        <url-pattern>/students</url-pattern>
+        <servlet-name>students</servlet-name>
+    </servlet-mapping>
+    <servlet-mapping>
+        <url-pattern>/doctors</url-pattern>
+        <servlet-name>doctors</servlet-name>
+    </servlet-mapping>
+    <servlet-mapping>
+        <url-pattern>/appointments</url-pattern>
+        <servlet-name>appointments</servlet-name>
+    </servlet-mapping>
+    <servlet-mapping>
+        <url-pattern>/diagnosis</url-pattern>
+        <servlet-name>diagnosis</servlet-name>
+    </servlet-mapping>
+    <servlet-mapping>
+        <url-pattern>/diagnosis-detail</url-pattern>
+        <servlet-name>diagnosisDetail</servlet-name>
+        
+    </servlet-mapping>
+    <servlet-mapping>
+        <url-pattern>/lab</url-pattern>
+        <servlet-name>lab</servlet-name>
+        
+    </servlet-mapping>
+     <servlet-mapping>
+        <url-pattern>/lab-update</url-pattern>
+        <servlet-name>labUpdate</servlet-name>
+        
+    </servlet-mapping>
+    <servlet-mapping>
+        <url-pattern>/</url-pattern>
+        <servlet-name>Home</servlet-name>
+    </servlet-mapping>
 
-  <!-- <welcome-file-list>
-    <welcome-file>index.html</welcome-file>
-    <welcome-file>index.htm</welcome-file>
-    <welcome-file>index.jsp</welcome-file>
-    <welcome-file>default.html</welcome-file>
-    <welcome-file>default.htm</welcome-file>
-    <welcome-file>default.jsp</welcome-file>
-  </welcome-file-list> -->
+    <!-- <welcome-file-list>
+      <welcome-file>index.html</welcome-file>
+      <welcome-file>index.htm</welcome-file>
+      <welcome-file>index.jsp</welcome-file>
+      <welcome-file>default.html</welcome-file>
+      <welcome-file>default.htm</welcome-file>
+      <welcome-file>default.jsp</welcome-file>
+    </welcome-file-list> -->
 </web-app>

@@ -10,18 +10,19 @@ package entities;
  */
 public class Appointment {
 
-    public Student student ;
+    public User user;
     public String intent;
     public String date;
     public String time;
     public Doctor doctor;
     public String id;
-    public Appointment(String id, Student student,String intent,String Date,String time,Doctor doctor){
-        this.doctor =doctor ;
+
+    public Appointment(String id, User user, String intent, String Date, String time, Doctor doctor) {
+        this.doctor = doctor;
         this.id = id;
         this.intent = intent;
         this.date = Date;
-        this.time =time;
-        this.student=student;
+        this.time = time;
+        this.user = user;
     }
 }

@@ -1,1 +1,25 @@
-{"doctors":[{"name":"new ","phoneNumber":"1234567","id":"7804339041","email":"email@gmail.com"},{"id":"8656428722"}]}
+{
+    "doctors": [{
+            "name": "john mdoe",
+            "id": "4690511485",
+            "surname": "",
+            "firstName": "john mdoe",
+            "lastName": "",
+            "phone": "1234567",
+            "email": "test@gmail.com",
+            "gender": "male",
+            "maritalStatus": "",
+            "religion": ""
+        }, {
+            "name": "john mdoe",
+            "id": "0435069433",
+            "surname": "",
+            "firstName": "john mdoe",
+            "lastName": "",
+            "phone": "1234567",
+            "email": "test@gmail.com",
+            "gender": "male",
+            "maritalStatus": "",
+            "religion": ""
+        }]
+}

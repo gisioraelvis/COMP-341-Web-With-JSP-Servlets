@@ -18,14 +18,14 @@
         <link rel="stylesheet" href="static/icofont/icofont.min.css" />
         <link rel="stylesheet" href="static/index.css" />
         <link rel="stylesheet" href="static/students.css" />
-
+        <meta name="viewport" content="width=device-width, initial-scale=1, max-scale=1, height=device-height"/>
     </head>
 
     <body>
         <%
             ArrayList<Appointment> appointments = (ArrayList<Appointment>) request.getAttribute("appointments");
             ArrayList<Doctor> doctors = (ArrayList<Doctor>) request.getAttribute("doctors");
-            ArrayList<Student> students = (ArrayList<Student>) request.getAttribute("students");
+            ArrayList<User> users = (ArrayList<User>) request.getAttribute("users");
 
         %>
 
@@ -34,8 +34,8 @@
         </div>
         <div class="ml-17 ">
 
-            <div class=" container mx-auto mx-3 mt-5">
-                <h3 class="mb-4  text-center">
+            <div class=" container mx-auto mx-3 pt-5">
+                <h3 class="mb-4  ">
                     Appointments
                 </h3>
                 <div class="card table-responsive">
@@ -69,13 +69,13 @@
                                 </td>
                                 <td>
                                     <strong>
-                                        <%=appointment.student.getFirstName() + " " + appointment.student.getLastName()%>
+                                        <%=appointment.user.getFirstName() + " " + appointment.user.getLastName()%>
                                     </strong>
                                 </td>
-                                
+
 
                                 <td>
-                                    <%=appointment.student.getPhone()%>
+                                    <%=appointment.user.getPhone()%>
 
                                 </td>
                                 <td>
@@ -98,11 +98,11 @@
                                     <div class="actions">
                                         <form action="appointment" method="delete">
                                             <input type="hidden" value="" name="id"    value ="<%=appointment.id%>"/>
-                                             <button class="btn btn-error btn-sm rounded-pill">
-                                            <span class="btn-icon icofont-ui-delete"></span>
-                                        </button>
+                                            <button class="btn btn-error btn-sm rounded-circle">
+                                                <span class="btn-icon icofont-ui-delete"></span>
+                                            </button>
                                         </form>
-                                       
+
                                     </div>
                                 </td>
                             </tr>
@@ -114,84 +114,83 @@
         </div>
 
         <div onclick="toggleModal()" class="add-action-box">
-            <button class="btn btn-primary btn-lg btn-square rounded-pill" data-bs-toggle="modal"
+            <button class="btn btn-primary btn-lg btn-square rounded-circle" data-bs-toggle="modal"
                     data-bs-target="#add-appointment">
                 <span class="btn-icon icofont-stethoscope fs-48"></></span>
             </button>
         </div>
         <div class="modal fade show" id="modal">
-        <div class="modal-dialog modal-dialog-centered">
-       <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title">Create appointment</h5>
-                </div>
-                <form action="appointments" method="post">
-                    <div class="modal-body">
-                        <div class="row">
-                            <div class="form-group col-12 col-sm-6">
-                                 <label for="student" class="form-label">Student</label>
-                                <select name="studentId" id="student" required="true" class="form-control my-2" >
-                                    
-                                    <option selected="true">
-                                        Select student ...
-                                    </option>
-                                    <% for (Student student : students) {%>
-                                    <option value="<%=student.getId() %>">
-                                        <%=student.getFirstName() + " " + student.getLastName() %>
-                                    </option>
-                                    <% } %>
-                                </select>
-                            </div>
-                            <div class="form-group col-12 col-sm-6">
-                                <label  class="form-label" for="doctor">Doctor</label>
-                                <select name="doctorId" required="true" id="doctor" class="form-control my-2" >
-                                  <option selected="true">
-                                      Select doctor ...
-                                  </option>
-                                    <% for (Doctor doctor : doctors) {%>
-                                    <option value="<%=doctor.id %>">
-                                        <%=doctor.name%>
-                                    </option>
-                                    <% } %>
-                                </select>
-                            </div>
-                         <div class="row">
-                            <div class="form-group col-12 col-sm-6">
-                                <label for="date" class="form-label">Date</label>
-                                <input name="date" required="true" id="time" class="form-control my-2" type="date"
-                                       placeholder="date">
-                            </div>
-                            <div class="form-group col-12 col-sm-6">
-                                <label for="time" class="form-label" >Time </label>
-                                <input name="time" required="true" id="time" class="form-control my-2" type="time"
-                                       placeholder="time">
-                            </div>
-                           
-                        </div>        
-                            <div class="form-group col-12 col-sm-6">
-                                 <label for="app" class="form-label">Appointment reason</label>
-                                 <input name="intent" id="app" required="true" class="form-control my-2" type="text"
-                                       placeholder="reason">
-                            </div>
-                        </div>
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Create appointment</h5>
+                    </div>
+                    <form action="appointments" method="post">
+                        <div class="modal-body">
+                            <div class="row">
+                                <div class="form-group col-12 col-sm-6">
+                                    <label for="student" class="form-label">User</label>
+                                    <select name="userId" id="student" required="true" class="form-control my-2" >
 
-                        <div class="modal-footer d-block">
-                            <div class="actions justify-content-between">
-                                <button onclick="toggleModal()" type="button" class="btn btn-error">Cancel</button>
-                                <button type="submit" class="btn btn-info">Add appointment</button>
+                                        <option selected="true">
+                                            Select user ...
+                                        </option>
+                                        <% for (User user : users) {%>
+                                        <option value="<%=user.getId()%>">
+                                            <%=user.getName()%>
+                                        </option>
+                                        <% } %>
+                                    </select>
+                                </div>
+                                <div class="form-group col-12 col-sm-6">
+                                    <label  class="form-label" for="doctor">Doctor</label>
+                                    <select name="doctorId" required="true" id="doctor" class="form-control my-2" >
+                                        <option selected="true">
+                                            Select doctor ...
+                                        </option>
+                                        <% for (Doctor doctor : doctors) {%>
+                                        <option value="<%=doctor.getId()%>">
+                                            <%=doctor.name%>
+                                        </option>
+                                        <% }%>
+                                    </select>
+                                </div>
+                                <div class="row">
+                                    <div class="form-group col-12 col-sm-6">
+                                        <label for="date" class="form-label">Date</label>
+                                        <input name="date" required="true" id="time" class="form-control my-2" type="date"
+                                               placeholder="date">
+                                    </div>
+                                    <div class="form-group col-12 col-sm-6">
+                                        <label for="time" class="form-label" >Time </label>
+                                        <input name="time" required="true" id="time" class="form-control my-2" type="time"
+                                               placeholder="time">
+                                    </div>
+
+                                </div>        
+                                <div class="form-group col-12 col-sm-6">
+                                    <label for="app" class="form-label">Appointment reason</label>
+                                    <input name="intent" id="app" required="true" class="form-control my-2" type="text"
+                                           placeholder="reason">
+                                </div>
                             </div>
-                        </div>
-                    </div>            
-                </form>
+
+                            <div class="modal-footer d-block">
+                                <div class="actions justify-content-between">
+                                    <button onclick="toggleModal()" type="button" class="btn btn-error">Cancel</button>
+                                    <button type="submit" class="btn btn-info">Add appointment</button>
+                                </div>
+                            </div>
+                        </div>            
+                    </form>
+                </div>
             </div>
         </div>
-        </div>
-
-        
+        <%@include file="footer.jsp" %>
         <script>
             const toggleModal = () => {
                 document.getElementById("modal").classList.toggle("show-modal");
-
+                
             };
         </script>
     </body>

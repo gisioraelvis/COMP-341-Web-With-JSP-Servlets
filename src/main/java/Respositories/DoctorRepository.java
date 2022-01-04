@@ -16,6 +16,7 @@ import utils.Utils;
  * @author ojay
  */
 public class DoctorRepository {
+
     private String PATH = Utils.databasePath + "doctor.json";
     private Gson gson = new Gson();
 
@@ -50,7 +51,7 @@ public class DoctorRepository {
 
                 list = this.gson.fromJson(str, DoctorsList.class);
             }
-           
+
             return list.doctors;
         } catch (IOException e) {
             e.printStackTrace();
@@ -61,7 +62,7 @@ public class DoctorRepository {
     public Doctor retrieveDoctor(String id) {
         ArrayList<Doctor> doctors = this.retrieveDoctors();
         for (Doctor doctor : doctors) {
-            if (doctor.id.equals(id)) {
+            if (doctor.getId().equals(id)) {
                 return doctor;
             }
         }

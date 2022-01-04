@@ -11,19 +11,20 @@ import java.util.ArrayList;
  * @author brian
  */
 public class UserRecords {
+
     private User user;
     private ArrayList<Diagnosis> medHistory;
-   
-    public UserRecords(User user,ArrayList<Diagnosis> history){
+
+    public UserRecords(User user, ArrayList<Diagnosis> history) {
         this.user = user;
         this.medHistory = history;
     }
-    
-    public User getUser(){
+
+    public User getUser() {
         return this.user;
     }
-    
-    public ArrayList<Diagnosis> getMedHistory(){
+
+    public ArrayList<Diagnosis> getMedHistory() {
         return this.medHistory;
     }
 }

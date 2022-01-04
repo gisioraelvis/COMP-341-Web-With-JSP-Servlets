@@ -2,7 +2,7 @@ package Respositories;
 
 import entities.Diagnosis;
 import entities.DiagnosisList;
-import interfaces.IDiagnosisRepository;
+
 import entities.Lab;
 import utils.Utils;
 import utils.IO;
@@ -11,7 +11,8 @@ import java.util.ArrayList;
 
 import com.google.gson.Gson;
 
-public class DiagnosisRepository implements IDiagnosisRepository {
+public class DiagnosisRepository {
+
     private String PATH = Utils.databasePath + "diagnosis.json";
     private Gson gson = new Gson();
 
@@ -29,20 +30,19 @@ public class DiagnosisRepository implements IDiagnosisRepository {
             String json = this.gson.toJson(list);
             IO.saveToFile(json, this.PATH);
         } catch (IOException e) {
-            
+
         } // Tools | Templates.
     }
 
-      public ArrayList<Diagnosis> retriveDiagnosis() {
+    public ArrayList<Diagnosis> retriveDiagnosis() {
         DiagnosisList list;
         try {
-            
+
             String str = utils.IO.readFile(this.PATH);
-            if(str.isEmpty()){
+            if (str.isEmpty()) {
                 list = new DiagnosisList();
-            }
-            else{
-            list = this.gson.fromJson(str, DiagnosisList.class);
+            } else {
+                list = this.gson.fromJson(str, DiagnosisList.class);
 
             }
             return list.diagnosis;
@@ -50,10 +50,8 @@ public class DiagnosisRepository implements IDiagnosisRepository {
         }
         return new ArrayList<Diagnosis>();
 
-        
     }
 
-    @Override
     public ArrayList<Diagnosis> patientHistory(String patientId) {
         ArrayList<Diagnosis> diagnosis = this.retriveDiagnosis();
         for (Diagnosis d : diagnosis) {
@@ -65,7 +63,6 @@ public class DiagnosisRepository implements IDiagnosisRepository {
         return history;
     }
 
-    @Override
     public Diagnosis currentDiagnosis(String patientId) {
         ArrayList<Diagnosis> diagnosis = this.patientHistory(patientId);
         if (diagnosis.isEmpty()) {
@@ -74,7 +71,6 @@ public class DiagnosisRepository implements IDiagnosisRepository {
         return (Diagnosis) diagnosis.get(diagnosis.size() - 1);
     }
 
-    @Override
     public ArrayList<Lab> retrivelabTests(String patientId) {
         Diagnosis diagnosis = this.currentDiagnosis(patientId);
         if (diagnosis == null) {
@@ -83,8 +79,7 @@ public class DiagnosisRepository implements IDiagnosisRepository {
         return diagnosis.lab;
     }
 
-    @Override
-    public void addLabResults(ArrayList<Lab> lab, String diagnosisID) {
+    public Diagnosis addLabResults(ArrayList<Lab> lab, String diagnosisID) {
         ArrayList<Diagnosis> diagnosisList = this.retriveDiagnosis();
         for (Diagnosis d : diagnosisList) {
             if (d.id.equals(diagnosisID)) {
@@ -95,9 +90,19 @@ public class DiagnosisRepository implements IDiagnosisRepository {
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
-                break;
+                return d;
             }
         }
+        return null;
 
+    }
+    public Diagnosis getDiagnosis(String id) {
+        ArrayList<Diagnosis> diagnosis = this.retriveDiagnosis();
+        for (Diagnosis d :diagnosis ) {
+            if (d.id.equals(id)) {
+                return d;
+            }
+        }
+        return null;
     }
 }

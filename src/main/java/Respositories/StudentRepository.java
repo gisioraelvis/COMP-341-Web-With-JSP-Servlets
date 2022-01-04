@@ -3,14 +3,15 @@ package Respositories;
 import com.google.gson.Gson;
 import entities.Student;
 import entities.StudentList;
-import interfaces.IStudentIO;
+
 import utils.Utils;
 import utils.IO;
 
 import java.io.IOException;
 import java.util.ArrayList;
 
-public class StudentRepository implements IStudentIO {
+public class StudentRepository {
+
     private String PATH = Utils.databasePath + "student.json";
     private Gson gson = new Gson();
 
@@ -36,14 +37,13 @@ public class StudentRepository implements IStudentIO {
     }
 
     public ArrayList<Student> retrieveStudents() {
-        StudentList list ;
+        StudentList list;
         try {
             String studentListStr = IO.readFile(this.PATH);
-            if(studentListStr.isEmpty()){
-               list = new StudentList();
-            }
-            else{
-                 list = this.gson.fromJson(studentListStr, StudentList.class);
+            if (studentListStr.isEmpty()) {
+                list = new StudentList();
+            } else {
+                list = this.gson.fromJson(studentListStr, StudentList.class);
             }
             return list.students;
         } catch (IOException e) {
@@ -61,11 +61,12 @@ public class StudentRepository implements IStudentIO {
         }
         return null;
     }
+
     public Student getStudentById(String id) {
         ArrayList<Student> students = this.retrieveStudents();
-       
+
         for (Student student : students) {
-             System.err.println(id+"----" + student.getId());
+            System.err.println(id + "----" + student.getId());
             if (student.getId().equals(id)) {
                 return student;
             }

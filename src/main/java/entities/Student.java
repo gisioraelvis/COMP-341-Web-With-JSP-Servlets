@@ -1,26 +1,25 @@
 package entities;
 
-public class Student  extends User{
+public class Student extends User {
 
     // Instance variables
     // basic data
     private String regNo;
 
     //    secondary data
-    private String admission,reasonAdmission,previousIllness,medicalHistory,privateHospital;
+    private String admission, reasonAdmission, previousIllness, medicalHistory, privateHospital;
     //    tertiary data
-    private String vision,hearing,bloodSugar,hbLevel,bloodGroup,urineChemistry,onTreatment,anyObservation,studentFit;
+    private String vision, hearing, bloodSugar, hbLevel, bloodGroup, urineChemistry, onTreatment, anyObservation, studentFit;
 
     private FamilyDoctor familyDoctor;
 
-
     //    Constructors
-    public Student(String id ,String regNo ,String surname, String firstName, String lastName, String phone, String email, String gender,
-                   String maritalStatus, String nationality, String religion, NextOfKin nextOfKin, String privateHospital,
-                   String admission, String reasonAdmission, String previousIllness, String medicalHistory, String vision,
-                   String hearing, String bloodSugar, String hbLevel, String bloodGroup, String urineChemistry, String onTreatment,
-                   String anyObservation, String studentFit, FamilyDoctor familyDoctor) {
-        super(id,surname,firstName,lastName,phone,email,gender,maritalStatus,nationality,religion,nextOfKin);
+    public Student(String id, String regNo, String surname, String firstName, String lastName, String phone, String email, String gender,
+            String maritalStatus, String nationality, String religion, NextOfKin nextOfKin, String privateHospital,
+            String admission, String reasonAdmission, String previousIllness, String medicalHistory, String vision,
+            String hearing, String bloodSugar, String hbLevel, String bloodGroup, String urineChemistry, String onTreatment,
+            String anyObservation, String studentFit, FamilyDoctor familyDoctor) {
+        super(id, surname, firstName, lastName, phone, email, gender, maritalStatus, nationality, religion, nextOfKin);
 
         this.admission = admission;
         this.reasonAdmission = reasonAdmission;
@@ -35,11 +34,10 @@ public class Student  extends User{
         this.onTreatment = onTreatment;
         this.anyObservation = anyObservation;
         this.studentFit = studentFit;
-        this.privateHospital=privateHospital;
+        this.privateHospital = privateHospital;
         this.familyDoctor = familyDoctor;
         this.regNo = regNo;
     }
-
 
     // Accessors
     public String getRegNo() {

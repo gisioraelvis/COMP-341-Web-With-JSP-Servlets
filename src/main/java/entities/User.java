@@ -4,23 +4,36 @@
  */
 package entities;
 
-
 public class User {
-    private String id,surname,firstName,lastName,phone,email,gender,maritalStatus,nationality,religion;
+
+    private String id, surname, firstName, lastName, phone, email, gender, maritalStatus, nationality, religion;
     private NextOfKin nextOfKin;
 
-    public User(String id,String surname,String firstName,String lastName,String phone,String email,String gender,String maritalStatus,String nationality,String religion,NextOfKin nextOfKin){
+    public User(String id, String surname, String firstName, String lastName, String phone, String email, String gender, String maritalStatus, String nationality, String religion, NextOfKin nextOfKin) {
         this.id = id;
-        this.surname= surname;
-        this.firstName=firstName;
-        this.lastName=lastName;
-        this.phone=phone;
-        this.email=email;
-        this.gender=gender;
-        this.maritalStatus=maritalStatus;
-        this.nationality=nationality;
-        this.religion=religion;
-        this.nextOfKin=nextOfKin;
+        this.surname = surname;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.phone = phone;
+        this.email = email;
+        this.gender = gender;
+        this.maritalStatus = maritalStatus;
+        this.nationality = nationality;
+        this.religion = religion;
+        this.nextOfKin = nextOfKin;
+    }
+
+    public User(String id, String firstName, String phone, String email, String gender) {
+        this.id = id;
+        this.surname = "";
+        this.firstName = firstName;
+        this.lastName = "";
+        this.phone = phone;
+        this.email = email;
+        this.gender = gender;
+        this.maritalStatus = "";
+        this.religion = "";
+
     }
 
     public String getId() {
@@ -53,6 +66,10 @@ public class User {
 
     public void setLastName(String lastName) {
         this.lastName = lastName;
+    }
+
+    public String getName() {
+        return this.firstName + this.lastName;
     }
 
     public String getPhone() {

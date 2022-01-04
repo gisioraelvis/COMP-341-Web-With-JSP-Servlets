@@ -11,6 +11,7 @@ import java.util.ArrayList;
  * @author ojay
  */
 public class DoctorsList {
-   public ArrayList<Doctor> doctors =new ArrayList<Doctor>();
+
+    public ArrayList<Doctor> doctors = new ArrayList<Doctor>();
 
 }

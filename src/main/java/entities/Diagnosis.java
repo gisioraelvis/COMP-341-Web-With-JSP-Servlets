@@ -4,6 +4,7 @@
  */
 package entities;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 
 /**
@@ -18,31 +19,27 @@ public class Diagnosis {
     public String notes;
     public String prescription;
     public String id;
-    
-    public Diagnosis(User user, String consultation,ArrayList<Lab> lab, String notes, 
-                     String prescription, String id){
+    public LocalDate date;
+    public String time;
+
+    //consulation constractor create new diagnosis
+    public Diagnosis(User user, String id, String consultation, String notes, String prescription,ArrayList<Lab> lab) {
         this.user = user;
         this.id = id;
         this.consultation = consultation;
         this.notes = notes;
-        this.lab = lab;
+        this.date = LocalDate.now();
         this.prescription = prescription;
+        this.lab = lab;
     }
-    //consulation constractor
-        Diagnosis(User user, String consultation, String notes,String id){
-        this.user = user;
-        this.id = id;
-        this.consultation = consultation;
-        this.notes = notes;
+    public String getTests(){
+        String test = "";
+        for(Lab l:this.lab){
+            test += l.test + ", ";
+        }
+       return test;
     }
     //needs a lab result first before giving a prescription
-        Diagnosis(User user, String consultation, String notes,String id,ArrayList<Lab> lab){
-        this.user = user;
-        this.id = id;
-        this.consultation = consultation;
-        this.notes = notes;
-        this.lab = lab;
-    }   
     
-}
 
+}

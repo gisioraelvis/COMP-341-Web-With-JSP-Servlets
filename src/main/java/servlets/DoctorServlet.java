@@ -5,8 +5,11 @@
 package servlets;
 
 import Respositories.DoctorRepository;
+import Respositories.UserRepository;
 import entities.Doctor;
+import entities.User;
 import java.io.IOException;
+import java.util.ArrayList;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -21,6 +24,7 @@ import javax.servlet.http.HttpServletResponse;
 public class DoctorServlet extends HttpServlet {
 
     DoctorRepository doctorIo = new DoctorRepository();
+    UserRepository userRepo = new UserRepository();
 
     @Override
     public void doGet(HttpServletRequest request,
@@ -38,9 +42,11 @@ public class DoctorServlet extends HttpServlet {
                 utils.Utils.iDGenerator(),
                 request.getParameter("name"),
                 request.getParameter("phone"),
-                request.getParameter("email")
+                request.getParameter("email"),
+                request.getParameter("gender")
         );
         doctorIo.add(doctor);
+        userRepo.add(doctor);
         request.setAttribute("doctors", doctorIo.retrieveDoctors());
         RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/doctor.jsp");
         dispatcher.forward(request, response);

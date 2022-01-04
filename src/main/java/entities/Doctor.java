@@ -8,15 +8,13 @@ package entities;
  *
  * @author ojay
  */
-public class Doctor {
-       public String name;
-       public String phoneNumber;
-       public String id;
-       public String email;
-       public Doctor(String id, String name,String phoneNumber,String email){
-           this.name = name;
-           this.id=id;
-           this.email = email;
-           this.phoneNumber = phoneNumber;
-       }
+public class Doctor extends User {
+
+    public String name;
+
+    public Doctor(String id, String name, String phoneNumber, String email, String gender) {
+        super(id, name, phoneNumber, email, gender);
+        this.name = name;
+
+    }
 }
