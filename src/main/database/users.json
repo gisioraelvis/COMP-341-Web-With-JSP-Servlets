@@ -1,0 +1,82 @@
+{
+    "users": [{
+            "id": "4690511485",
+            "surname": "",
+            "firstName": "john mdoe",
+            "lastName": "",
+            "phone": "1234567",
+            "email": "test@gmail.com",
+            "gender": "male",
+            "maritalStatus": "",
+            "religion": ""
+        }, {
+            "id": "7182206922",
+            "surname": "mdoe",
+            "firstName": "ojay",
+            "lastName": "ojay",
+            "phone": "0742446941",
+            "gender": "male",
+            "maritalStatus": "married",
+            "nationality": "USA",
+            "religion": "Muslim",
+            "nextOfKin": {
+                "name": "ojay",
+                "address": "07898787"
+            }
+        }, {
+            "id": "4902120785",
+            "surname": "mdoe",
+            "firstName": "ojay",
+            "lastName": "ojay",
+            "phone": "0742446941",
+            "gender": "male",
+            "maritalStatus": "single",
+            "nationality": "USA",
+            "religion": "Muslim",
+            "nextOfKin": {
+                "name": "",
+                "address": ""
+            }
+        }, {
+            "id": "8250008256",
+            "surname": "mdoe",
+            "firstName": "user 2",
+            "lastName": "john",
+            "phone": "1234567",
+            "email": "test@gmail.com",
+            "gender": "male",
+            "maritalStatus": "single",
+            "nationality": "kenya",
+            "religion": "christian",
+            "nextOfKin": {
+                "name": "",
+                "address": ""
+            }
+        }, {
+            "id": "6748760152",
+            "surname": "mdoe",
+            "firstName": "user 2",
+            "lastName": "john",
+            "phone": "1234567",
+            "email": "test@gmail.com",
+            "gender": "male",
+            "maritalStatus": "single",
+            "nationality": "kenya",
+            "religion": "christian",
+            "nextOfKin": {
+                "name": "",
+                "address": ""
+            }
+        }, {
+            "name": "john mdoe",
+            "id": "0435069433",
+            "surname": "",
+            "firstName": "john mdoe",
+            "lastName": "",
+            "phone": "1234567",
+            "email": "test@gmail.com",
+            "gender": "male",
+            "maritalStatus": "",
+            "religion": ""
+        }]
+}
